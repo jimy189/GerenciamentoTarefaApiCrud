@@ -1,4 +1,4 @@
-package com.com.todolistapi.dto.Response;
+package com.com.gerenciamentotarefasapi.dto.Response;
 
 
 import lombok.AllArgsConstructor;

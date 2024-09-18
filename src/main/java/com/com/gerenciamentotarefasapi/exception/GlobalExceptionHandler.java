@@ -1,4 +1,4 @@
-package com.com.todolistapi.exception;
+package com.com.gerenciamentotarefasapi.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

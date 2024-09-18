@@ -1,4 +1,4 @@
-package com.com.todolistapi.entity;
+package com.com.gerenciamentotarefasapi.entity;
 
 
 import jakarta.persistence.Entity;

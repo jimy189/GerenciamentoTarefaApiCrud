@@ -1,11 +1,10 @@
-package com.com.todolistapi.service;
+package com.com.gerenciamentotarefasapi.service;
 
-import com.com.todolistapi.dto.Request.TarefaRequestDTO;
-import com.com.todolistapi.dto.Response.TarefaResponseDTO;
-import com.com.todolistapi.entity.Tarefas;
-import com.com.todolistapi.exception.BadRequestException;
-import com.com.todolistapi.exception.ResourceNotFoundException;
-import com.com.todolistapi.repository.TodoRepository;
+import com.com.gerenciamentotarefasapi.dto.Request.TarefaRequestDTO;
+import com.com.gerenciamentotarefasapi.dto.Response.TarefaResponseDTO;
+import com.com.gerenciamentotarefasapi.entity.Tarefas;
+import com.com.gerenciamentotarefasapi.exception.ResourceNotFoundException;
+import com.com.gerenciamentotarefasapi.repository.TodoRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 

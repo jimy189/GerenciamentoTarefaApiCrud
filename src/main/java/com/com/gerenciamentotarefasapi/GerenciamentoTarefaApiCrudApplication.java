@@ -1,4 +1,4 @@
-package com.com.todolistapi;
+package com.com.gerenciamentotarefasapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

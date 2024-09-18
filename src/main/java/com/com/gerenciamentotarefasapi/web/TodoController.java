@@ -1,9 +1,8 @@
-package com.com.todolistapi.web;
+package com.com.gerenciamentotarefasapi.web;
 
-import com.com.todolistapi.dto.Request.TarefaRequestDTO;
-import com.com.todolistapi.dto.Response.TarefaResponseDTO;
-import com.com.todolistapi.entity.Tarefas;
-import com.com.todolistapi.service.TodoService;
+import com.com.gerenciamentotarefasapi.dto.Request.TarefaRequestDTO;
+import com.com.gerenciamentotarefasapi.dto.Response.TarefaResponseDTO;
+import com.com.gerenciamentotarefasapi.service.TodoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

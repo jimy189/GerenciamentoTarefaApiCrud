@@ -1,4 +1,4 @@
-package com.com.todolistapi.exception;
+package com.com.gerenciamentotarefasapi.exception;
 
 public class BadRequestException extends RuntimeException {
 

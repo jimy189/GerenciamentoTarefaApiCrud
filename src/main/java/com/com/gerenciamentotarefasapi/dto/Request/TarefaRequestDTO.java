@@ -1,4 +1,4 @@
-package com.com.todolistapi.dto.Request;
+package com.com.gerenciamentotarefasapi.dto.Request;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
