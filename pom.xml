@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.com</groupId>
-    <artifactId>todolistapi</artifactId>
+    <artifactId>GerenciamentoTarefasApi</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>todolistapi</name>
     <description>todolistapi</description>

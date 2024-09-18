@@ -10,36 +10,29 @@ import jakarta.validation.constraints.NotBlank;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 
 @Entity
-@Table(name = "todos")
-public class Todo {
+@Table(name = "tarefas")
+public class Tarefas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank
+
+    @NotBlank(message = "O nome da tarefa não pode estar vazio.")
     private String nome;
-    @NotBlank
+
+    @NotBlank(message = "A descrição da tarefa não pode estar vazia.")
     private String descricao;
     private boolean realizado;
-    private int prioridade;
 
-    public Todo() {
-
-    }
-
-    public Todo(Long id, @NotBlank String nome, @NotBlank String descricao, boolean realizado, int prioridade) {
-        this.id = id;
+    public Tarefas(String nome, String descricao, boolean realizado) {
         this.nome = nome;
-        this.descricao = descricao;
+        this.descricao =descricao;
         this.realizado = realizado;
-        this.prioridade = prioridade;
     }
 
-    public Todo(String nome, String descricao, boolean realizado, int prioridade) {
-        this.nome = nome;
-        this.descricao = descricao;
-        this.realizado = realizado;
-        this.prioridade = prioridade;
+    public Tarefas() {
+
     }
+
 
     public Long getId() {
         return id;
@@ -71,14 +64,6 @@ public class Todo {
 
     public void setRealizado(boolean realizado) {
         this.realizado = realizado;
-    }
-
-    public int getPrioridade() {
-        return prioridade;
-    }
-
-    public void setPrioridade(int prioridade) {
-        this.prioridade = prioridade;
     }
 
     @Override

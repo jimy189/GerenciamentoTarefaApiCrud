@@ -1,6 +1,8 @@
 package com.com.todolistapi.web;
 
-import com.com.todolistapi.entity.Todo;
+import com.com.todolistapi.dto.Request.TarefaRequestDTO;
+import com.com.todolistapi.dto.Response.TarefaResponseDTO;
+import com.com.todolistapi.entity.Tarefas;
 import com.com.todolistapi.service.TodoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,29 +20,37 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/todos")
+@RequestMapping("/tarefa")
 public class TodoController {
+
     @Autowired
     private TodoService todoService;
 
-    @PostMapping
-    ResponseEntity<List<Todo>> create(@Valid @RequestBody Todo todo) {
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(todoService.create(todo));
+    // Criar Tarefa - Retorna 201 Created
+    @PostMapping("/criar")
+    public ResponseEntity<TarefaResponseDTO> create(@Valid @RequestBody TarefaRequestDTO tarefa) {
+        TarefaResponseDTO novaTarefa = todoService.criarTarefa(tarefa);
+        return ResponseEntity.status(HttpStatus.CREATED).body(novaTarefa);
     }
 
-    @GetMapping
-    List<Todo> list() {
-        return todoService.list();
+    // Listar Tarefas - Retorna 200 OK com a lista
+    @GetMapping("/listar")
+    public ResponseEntity<List<TarefaResponseDTO>> list() {
+        List<TarefaResponseDTO> tarefas = todoService.listarTarefas();
+        return ResponseEntity.ok(tarefas);
     }
 
-    @PutMapping("{id}")
-    List<Todo> update(@PathVariable Long id, @RequestBody Todo todo) {
-        return todoService.update(id, todo);
+    // Atualizar Tarefa - Retorna 200 OK após a atualização
+    @PutMapping("/atualizar/{id}")
+    public ResponseEntity<TarefaResponseDTO> update(@PathVariable Long id, @Valid @RequestBody TarefaRequestDTO tarefa) {
+        TarefaResponseDTO tarefaAtualizada = todoService.atualizarTarefa(id, tarefa);
+        return ResponseEntity.ok(tarefaAtualizada);
     }
 
-    @DeleteMapping("{id}")
-    List<Todo> delete(@PathVariable Long id) {
-        return todoService.delete(id);
+    // Deletar Tarefa - Retorna 204 No Content se a tarefa for deletada
+    @DeleteMapping("/deletar/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        todoService.deletarTarefa(id);
+        return ResponseEntity.noContent().build(); // Retorna 204 No Content
     }
 }
